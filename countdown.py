@@ -1,6 +1,7 @@
 import random
 from time import sleep
 import sys
+
 add = lambda a, b: a + b
 sub = lambda a, b: a - b
 mul = lambda a, b: a * b
@@ -43,7 +44,6 @@ def Solve(target, numbers):
                 print(ReprStack(stack))
                 exit(0)
 
-
             if len(remaining) > 0:
                 for op in operations:
                     stack.append(op)
@@ -77,8 +77,7 @@ number_str = ''.join(str(number))
 print('Great \nThe numbers are: \t', number_str)
 sleep(2)
 print('And the target is:\t', target)
-#sleep(35)
-
+# sleep(35)
 
 
 for remaining in range(30, 0, -1):
@@ -91,5 +90,3 @@ sys.stdout.write("\rComplete!\n")
 
 print("And the Answer is: \n")
 Solve(target, number)
-
-
