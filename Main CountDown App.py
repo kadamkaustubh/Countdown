@@ -1,11 +1,8 @@
 import sys
 
-from PyQt5 import QtGui
-from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QMainWindow, QTextEdit, QAction, QApplication, QDesktopWidget, \
-    QWidget, QLabel, QPushButton, QDialog, QVBoxLayout, QStackedWidget, QHBoxLayout, QRadioButton, QCheckBox, QLineEdit, \
-    QFormLayout, QButtonGroup, QFrame, QSpinBox
-from PyQt5.QtGui import QIcon, QPixmap, QFont
+from PyQt5.QtGui import QFont
+from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QLabel, QPushButton, QVBoxLayout, QStackedWidget, \
+    QHBoxLayout, QRadioButton, QButtonGroup, QFrame, QSpinBox, QComboBox
 
 
 def title_font():
@@ -20,6 +17,7 @@ class HomeWindow(QMainWindow):
     def __init__(self):
         super().__init__()
 
+        self.fix_combo = QPushButton('Set Target')
         self.gen_reset = QPushButton('Reset')
         self.number_tray_layout = QHBoxLayout()
         self.number_show = QLabel('')
@@ -123,6 +121,7 @@ class HomeWindow(QMainWindow):
         self.gen_big_numbers.clicked.connect(lambda: self.gen_reset.setDisabled(False))
         self.gen_reset.clicked.connect(lambda: self.resetter())
         self.gen_reset.clicked.connect(lambda: self.gen_reset.setDisabled(True))
+        self.fix_combo.clicked.connect(lambda: self.extract_numbers())
 
         second_line.addWidget(self.number_show)
         second_line.addWidget(QLabel(''))
@@ -141,22 +140,30 @@ class HomeWindow(QMainWindow):
     def number_tray(self):
         big = self.big_number.value()
         small = 6 - big
+        big_numbers = [str(25*(i+1)) for i in range(4)]
+        small_numbers = [str(i+1) for i in range(10)]
         for i in range(big):
-            self.number_tray_layout.insertWidget(i,QLabel('%s' % str(i+1)))
+            big_combo = QComboBox()
+            big_combo.addItems(big_numbers)
+            self.number_tray_layout.addWidget(big_combo)
         for i in range(small):
-            self.number_tray_layout.insertWidget(i+big,QLabel('s%d' % i))
+            small_combo = QComboBox()
+            small_combo.addItems(small_numbers)
+            self.number_tray_layout.addWidget(small_combo)
+        self.number_tray_layout.addWidget(self.fix_combo)
         lst = []
+
+    def extract_numbers(self):
         for i in range(self.number_tray_layout.count()):
             item = self.number_tray_layout.itemAt(i).widget()
-            if isinstance(item, QLabel):
-                print(item.text())
+            if isinstance(item, QComboBox):
+                print(item.currentText())
 
     def resetter(self):
         self.gen_big_numbers.setDisabled(False)
         for i in range(self.number_tray_layout.count()):
             item = self.number_tray_layout.itemAt(i).widget()
-            if isinstance(item, QLabel):
-                item.deleteLater()
+            item.deleteLater()
 
 
 if __name__ == '__main__':
