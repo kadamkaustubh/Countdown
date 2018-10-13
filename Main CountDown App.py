@@ -1,8 +1,10 @@
 import sys
-
+from time import sleep
+from countdown_backend import CountDownSolver
+from PyQt5.QtCore import QTimer
 from PyQt5.QtGui import QFont
 from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QLabel, QPushButton, QVBoxLayout, QStackedWidget, \
-    QHBoxLayout, QRadioButton, QButtonGroup, QFrame, QSpinBox, QComboBox
+    QHBoxLayout, QRadioButton, QButtonGroup, QFrame, QSpinBox, QComboBox, QLineEdit, QProgressBar
 
 
 def title_font():
@@ -17,6 +19,11 @@ class HomeWindow(QMainWindow):
     def __init__(self):
         super().__init__()
 
+        self.countdownClock = QProgressBar()
+        self.target_line = QHBoxLayout()
+        self.target_edit = QLineEdit('Target')
+        self.target_push = QPushButton('Start the Clock')
+        self.accept_target = 0
         self.fix_combo = QPushButton('Set Target')
         self.gen_reset = QPushButton('Reset')
         self.number_tray_layout = QHBoxLayout()
@@ -45,10 +52,10 @@ class HomeWindow(QMainWindow):
         self.Stack.addWidget(self.stack_menu)
         self.Stack.addWidget(self.input_menu)
         self.setCentralWidget(self.Stack)
-        self.Stack.setCurrentIndex(1)
+        self.Stack.setCurrentIndex(0)
 
         # Formatting
-        self.resize(300*1.6,300)
+        self.resize(300 * 1.6, 300)
 
     def menu_page(self):
         left_col = QVBoxLayout()
@@ -96,6 +103,7 @@ class HomeWindow(QMainWindow):
 
         central_layout = QVBoxLayout()
         run_menu = QPushButton('Start')
+        run_menu.clicked.connect(lambda: self.Stack.setCurrentIndex(1))
         central_layout.addLayout(top_box)
         central_layout.addWidget(run_menu)
 
@@ -125,11 +133,59 @@ class HomeWindow(QMainWindow):
 
         second_line.addWidget(self.number_show)
         second_line.addWidget(QLabel(''))
+
+        self.target_line.addWidget(self.target_edit)
+        self.target_line.addWidget(self.target_push)
+
+        self.target_push.clicked.connect(lambda: self.target_push.setDisabled(True))
+        self.target_push.clicked.connect(lambda: self.verify_target(self.target_line))
+
+        clock_line = QHBoxLayout()
+
         sec_layout = QVBoxLayout()
         sec_layout.addLayout(first_line)
         sec_layout.addLayout(second_line)
         sec_layout.addLayout(self.number_tray_layout)
+        sec_layout.addLayout(self.target_line)
+
+        if self.accept_target == 1:
+            self.countdownClock.setGeometry(250,20)
+            self.countdownClock.setRange(0,30)
+            clock_line.addWidget(self.countdownClock)
+            sec_layout.addLayout(clock_line)
+
+
+
+
         self.input_menu.setLayout(sec_layout)
+
+    def start_algorithm(self):
+
+        for remaining in range(30, 0, -1):
+            self.countdownClock.setValue(remaining)
+            sleep(1)
+
+    def verify_target(self, hor_line):
+        def delete_label():
+            for i in range(hor_line.count()):
+                item = hor_line.itemAt(i).widget()
+                if isinstance(item, QLabel):
+                    item.deleteLater()
+
+        try:
+            self.target = int(self.target_edit.text())
+            delete_label()
+            if self.target < 100 or self.target > 999:
+                hor_line.addWidget(QLabel('Target out of Range'))
+                self.target_push.setDisabled(False)
+            else:
+                hor_line.addWidget(QLabel('Countdown Started!'))
+                self.accept_target = 1
+        except ValueError:
+            delete_label()
+            target_error = QLabel('Target not an Integer')
+            hor_line.addWidget(target_error)
+            self.target_push.setDisabled(False)
 
     def set_numbers(self):
         print_string = 'Coming up, %d big and %d little ones, and the numbers are:' \
@@ -140,8 +196,8 @@ class HomeWindow(QMainWindow):
     def number_tray(self):
         big = self.big_number.value()
         small = 6 - big
-        big_numbers = [str(25*(i+1)) for i in range(4)]
-        small_numbers = [str(i+1) for i in range(10)]
+        big_numbers = [str(25 * (i + 1)) for i in range(4)]
+        small_numbers = [str(i + 1) for i in range(10)]
         for i in range(big):
             big_combo = QComboBox()
             big_combo.addItems(big_numbers)
