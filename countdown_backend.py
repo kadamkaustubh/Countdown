@@ -8,8 +8,6 @@ class CountDownSolver:
         self.target = random.randint(100, 1000) if target is None else target
         if kwargs.get('sure_target') is True:
             self.target = 6969
-        print('numbers', self.numbers)
-        print('target', self.target)
 
         add = lambda a, b: a + b
         sub = lambda a, b: a - b
@@ -31,8 +29,8 @@ class CountDownSolver:
         operations = self.operations
         global print_limit
         global print_stack
-        print_limit = 0
-        print_stack = []
+        print_limit = 100
+        print_stack = [0]
 
         def evaluate(stack):
             try:
@@ -61,10 +59,10 @@ class CountDownSolver:
 
                 remaining = nums[:n] + nums[n + 1:]
 
-                if evaluate(stack) == target and print_limit < 5:
-                    if repr_stack(stack) not in print_stack:
-                        print_limit += 1
-                        print_stack.append(repr_stack(stack))
+                if evaluate(stack) == target:
+                    if len(repr_stack(stack)) <= print_limit:
+                        print_limit = len(repr_stack(stack))
+                        print_stack[0] = repr_stack(stack)
 
                 if len(remaining) > 0:
                     for op in operations:

@@ -1,10 +1,11 @@
 import sys
 from time import sleep
-from countdown_backend import CountDownSolver
-from PyQt5.QtCore import QTimer
+
 from PyQt5.QtGui import QFont
 from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QLabel, QPushButton, QVBoxLayout, QStackedWidget, \
     QHBoxLayout, QRadioButton, QButtonGroup, QFrame, QSpinBox, QComboBox, QLineEdit, QProgressBar
+
+from countdown_backend import CountDownSolver
 
 
 def title_font():
@@ -19,6 +20,7 @@ class HomeWindow(QMainWindow):
     def __init__(self):
         super().__init__()
 
+        self.solution = []
         self.countdownClock = QProgressBar()
         self.target_line = QHBoxLayout()
         self.target_edit = QLineEdit('Target')
@@ -130,47 +132,50 @@ class HomeWindow(QMainWindow):
         self.gen_reset.clicked.connect(lambda: self.resetter())
         self.gen_reset.clicked.connect(lambda: self.gen_reset.setDisabled(True))
         self.fix_combo.clicked.connect(lambda: self.extract_numbers())
+        self.fix_combo.clicked.connect(lambda: self.target_tray())
+
 
         second_line.addWidget(self.number_show)
         second_line.addWidget(QLabel(''))
 
-        self.target_line.addWidget(self.target_edit)
-        self.target_line.addWidget(self.target_push)
-
-        self.target_push.clicked.connect(lambda: self.target_push.setDisabled(True))
-        self.target_push.clicked.connect(lambda: self.verify_target(self.target_line))
-
         clock_line = QHBoxLayout()
+        self.countdownClock.setRange(0, 30)
+        clock_line.addWidget(self.countdownClock)
 
         sec_layout = QVBoxLayout()
         sec_layout.addLayout(first_line)
         sec_layout.addLayout(second_line)
         sec_layout.addLayout(self.number_tray_layout)
         sec_layout.addLayout(self.target_line)
-
-        if self.accept_target == 1:
-            self.countdownClock.setGeometry(250,20)
-            self.countdownClock.setRange(0,30)
-            clock_line.addWidget(self.countdownClock)
-            sec_layout.addLayout(clock_line)
-
-
-
+        sec_layout.addLayout(clock_line)
 
         self.input_menu.setLayout(sec_layout)
 
-    def start_algorithm(self):
+    def target_tray(self):
+        self.target_line.addWidget(self.target_edit)
+        self.target_line.addWidget(self.target_push)
+        self.target_push.clicked.connect(lambda: self.target_push.setDisabled(True))
+        self.target_push.clicked.connect(lambda: self.verify_target(self.target_line))
 
-        for remaining in range(30, 0, -1):
-            self.countdownClock.setValue(remaining)
+    def start_algorithm(self):
+        integer_numbers = [int(i) for i in self.numbers]
+        problem = CountDownSolver(self.big_number.value(), integer_numbers, self.target)
+        starter_check =0
+        for i in range(31):
+            if starter_check ==0:
+                self.solution = problem.solve()
+                starter_check = 1
+            self.countdownClock.setValue(i)
             sleep(1)
+
+        print(self.solution)
 
     def verify_target(self, hor_line):
         def delete_label():
             for i in range(hor_line.count()):
                 item = hor_line.itemAt(i).widget()
                 if isinstance(item, QLabel):
-                    item.deleteLater()
+                    item.hide()
 
         try:
             self.target = int(self.target_edit.text())
@@ -179,7 +184,8 @@ class HomeWindow(QMainWindow):
                 hor_line.addWidget(QLabel('Target out of Range'))
                 self.target_push.setDisabled(False)
             else:
-                hor_line.addWidget(QLabel('Countdown Started!'))
+                # hor_line.addWidget(QLabel('Countdown Started!'))
+                self.start_algorithm()
                 self.accept_target = 1
         except ValueError:
             delete_label()
@@ -207,19 +213,21 @@ class HomeWindow(QMainWindow):
             small_combo.addItems(small_numbers)
             self.number_tray_layout.addWidget(small_combo)
         self.number_tray_layout.addWidget(self.fix_combo)
-        lst = []
+        self.fix_combo.show()
 
     def extract_numbers(self):
+        self.numbers = []
         for i in range(self.number_tray_layout.count()):
             item = self.number_tray_layout.itemAt(i).widget()
             if isinstance(item, QComboBox):
-                print(item.currentText())
+                self.numbers.append(item.currentText())
 
     def resetter(self):
         self.gen_big_numbers.setDisabled(False)
+        self.number_show.hide()
         for i in range(self.number_tray_layout.count()):
             item = self.number_tray_layout.itemAt(i).widget()
-            item.deleteLater()
+            item.hide()
 
 
 if __name__ == '__main__':
