@@ -1,7 +1,7 @@
 import sys
 from time import sleep
 
-from PyQt5.QtGui import QFont
+from PyQt5.QtGui import QFont, QIcon
 from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QLabel, QPushButton, QVBoxLayout, QStackedWidget, \
     QHBoxLayout, QRadioButton, QButtonGroup, QFrame, QSpinBox, QComboBox, QLineEdit, QProgressBar
 
@@ -20,6 +20,7 @@ class HomeWindow(QMainWindow):
     def __init__(self):
         super().__init__()
 
+        self.back2menu = QPushButton('Back to Menu')
         self.solution = []
         self.countdownClock = QProgressBar()
         self.target_line = QHBoxLayout()
@@ -55,6 +56,8 @@ class HomeWindow(QMainWindow):
         self.Stack.addWidget(self.input_menu)
         self.setCentralWidget(self.Stack)
         self.Stack.setCurrentIndex(0)
+        self.setWindowIcon(QIcon('CD_logo.png'))
+        self.setWindowTitle('CountDown Numbers\' Game')
 
         # Formatting
         self.resize(300 * 1.6, 300)
@@ -114,6 +117,8 @@ class HomeWindow(QMainWindow):
         self.stack_menu.setLayout(central_layout)
 
     def input_page(self):
+        back_line = QHBoxLayout()
+        back_line.addWidget(self.back2menu)
         big_number_label = QLabel("How Many Big Ones?")
         self.big_number.setRange(1, 4)
         first_line = QHBoxLayout()
@@ -134,7 +139,6 @@ class HomeWindow(QMainWindow):
         self.fix_combo.clicked.connect(lambda: self.extract_numbers())
         self.fix_combo.clicked.connect(lambda: self.target_tray())
 
-
         second_line.addWidget(self.number_show)
         second_line.addWidget(QLabel(''))
 
@@ -143,6 +147,7 @@ class HomeWindow(QMainWindow):
         clock_line.addWidget(self.countdownClock)
 
         sec_layout = QVBoxLayout()
+        sec_layout.addLayout(back_line)
         sec_layout.addLayout(first_line)
         sec_layout.addLayout(second_line)
         sec_layout.addLayout(self.number_tray_layout)
@@ -150,6 +155,8 @@ class HomeWindow(QMainWindow):
         sec_layout.addLayout(clock_line)
 
         self.input_menu.setLayout(sec_layout)
+
+        self.back2menu.clicked.connect(lambda: self.Stack.setCurrentIndex(0))
 
     def target_tray(self):
         self.target_line.addWidget(self.target_edit)
@@ -160,9 +167,9 @@ class HomeWindow(QMainWindow):
     def start_algorithm(self):
         integer_numbers = [int(i) for i in self.numbers]
         problem = CountDownSolver(self.big_number.value(), integer_numbers, self.target)
-        starter_check =0
+        starter_check = 0
         for i in range(31):
-            if starter_check ==0:
+            if starter_check == 0:
                 self.solution = problem.solve()
                 starter_check = 1
             self.countdownClock.setValue(i)
