@@ -16,6 +16,12 @@ class CountDownSolver:
 
         self.operations = [(add, '+'), (sub, '-'), (mul, '*'), (div, '/')]
 
+    def generate_target(self):
+        stack = []
+        numbers_used = random.randint(2,6)
+        operations_used = numbers_used - 1
+
+
     def number_generator(self):
         high = random.sample([25, 50, 75, 100], int(self.big_numbers))
         low = random.sample(range(1, 11), (6 - int(self.big_numbers)))
