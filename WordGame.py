@@ -1,47 +1,36 @@
-import re
+with open('words/en', 'r') as fileopen:
+    words = [line.strip() for line in fileopen]
+
+# Sort dictionary by lenght
+sortedList = sorted(words, key=len)
+
+# Reverses list, longest lenght to the top
+resverseDic = reversed(sortedList)
+f = open("sortedDic.txt","w")
+
+# Write word to text file with 9 letters or lower
+for item in resverseDic:
+    if len(item) < 10:
+        f.write("%s\n" % item)
+f.close()
+
+def anagram_check(word, check_word):
+    for letter in word:
+        if letter in check_word:
+            check_word=check_word.replace(letter, '', 1)
+        else:
+            return 0
+    return 1
 
 
-class WordGame:
-    def __init__(self, letters):
-        self.letters = [i for i in letters]
-        self.word_list = self.create_word_list()
-        self.short_list = self.create_short_list()
-
-    def word_finder(self):
-        matched_words = []
-        word_length = 0
-        for i in self.short_list:
-            i = i.strip()
-            word_break = [j for j in i]
-            match_criteria = sorted(word_break)
-            if match_criteria == sorted(self.letters) and len(i) >= word_length:
-                    word_length = len(i)
-                    matched_words.append(i)
-                    if len(matched_words) > 20:
-                        matched_words = matched_words[1:]
-        matched_words = matched_words[::-1]
-        return matched_words
-
-    @staticmethod
-    def create_word_list():
-        word_list = []
-        with open('words/en') as words:
-            for line in words:
-                word_list.append(line)
-        return word_list
-
-    def create_short_list(self):
-        shortened_list = []
-        usable_words = re.compile('^[a-z]{1,9}')
-        for i in self.word_list:
-            try:
-                if re.match(usable_words, i.rstrip()).group() == i.rstrip():
-                    shortened_list.append(i)
-            except AttributeError:
-                count = 0
-        return shortened_list
-
-
-game = WordGame('fdofieasg')
-lst = game.word_finder()
-print(lst)
+a = 'jasdiusdf'
+i = 0
+f = open('sortedDic.txt','r')
+for line in f:
+    line=line.strip()
+    if len(line)>=3:
+        if anagram_check(line,a):
+            print (i , ":", line)
+            i += 1
+            break
+f.close()
