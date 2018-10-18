@@ -1,36 +1,56 @@
-with open('words/en', 'r') as fileopen:
-    words = [line.strip() for line in fileopen]
+import random
 
-# Sort dictionary by lenght
-sortedList = sorted(words, key=len)
 
-# Reverses list, longest lenght to the top
-resverseDic = reversed(sortedList)
-f = open("sortedDic.txt","w")
+def sorted_word_list(file_name):
+    with open(file_name, 'r') as fileopen:
+        words = [line.strip() for line in fileopen]
+    sorted_list = sorted(words, key=len)
+    rev_list = reversed(sorted_list)
+    with open('words/SortedWords', 'w') as sort_write:
+        for word in rev_list:
+            if len(word) < 10:
+                sort_write.write(word)
+                sort_write.write('\n')
 
-# Write word to text file with 9 letters or lower
-for item in resverseDic:
-    if len(item) < 10:
-        f.write("%s\n" % item)
-f.close()
 
 def anagram_check(word, check_word):
     for letter in word:
         if letter in check_word:
-            check_word=check_word.replace(letter, '', 1)
+            check_word = check_word.replace(letter, '', 1)
         else:
-            return 0
-    return 1
+            return False
+    return True
 
 
-a = 'jasdiusdf'
-i = 0
-f = open('sortedDic.txt','r')
-for line in f:
-    line=line.strip()
-    if len(line)>=3:
-        if anagram_check(line,a):
-            print (i , ":", line)
-            i += 1
-            break
-f.close()
+def scramble_generator():
+    alphabet = list('qwertyuiopasdfghjklzxcvbnm')
+    vowels = list('aeiou')
+    consonants = []
+    for letter in alphabet:
+        if letter not in vowels:
+            consonants.append(letter)
+
+    scramble = random.sample(vowels, 3) + random.sample(consonants, 4) + random.sample(alphabet, 2)
+    return scramble
+
+
+def word_solve(letters):
+    top_score = 0
+    solution = []
+    with open('words/sortedWords', 'r') as dict_file:
+        for dict_item in dict_file:
+            dict_item = dict_item.strip()
+            if anagram_check(dict_item, letters):
+                if len(dict_item) < top_score:
+                    break
+                print(dict_item)
+                solution.append(dict_item)
+                top_score = len(dict_item)
+    dict_file.close()
+    return solution
+
+
+board = scramble_generator()
+print(board)
+let = ''.join(board)
+answer = word_solve(let)
