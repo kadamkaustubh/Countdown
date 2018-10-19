@@ -12,6 +12,7 @@ class MainMenu(QWidget):
 
         # define inputs
         # modes
+        self.selected_modes = []
         self.user_def = QRadioButton('User Defined')
         self.random_set = QRadioButton('Random')
         self.sure_set = QRadioButton('Random with Sure Answer')
@@ -29,11 +30,21 @@ class MainMenu(QWidget):
         self.next_page = QPushButton('Next')
 
         layout = self.def_layout()
-        groups = self.group_buttons()
+
         self.user_def.setChecked(True)
         self.std_time.setChecked(True)
-
+        self.groups = self.group_buttons()
+        self.next_page.clicked.connect(lambda: self.mode_logic())
         self.setLayout(layout)
+
+    def mode_logic(self):
+
+        selected_time = 0
+        if self.groups[1].checkedId() == 0: selected_time = 30
+        elif self.groups[1].checkedId() == 1: selected_time = self.var_time_edit.value()
+        else: selected_time = 1000
+        self.selected_modes = [self.groups[0].checkedId(), selected_time]
+        print(self.selected_modes)
 
     def def_layout(self):
         left_col = QVBoxLayout()
@@ -70,14 +81,14 @@ class MainMenu(QWidget):
 
     def group_buttons(self):
         mode_picker = QButtonGroup(self)
-        mode_picker.addButton(self.user_def)
-        mode_picker.addButton(self.random_set)
-        mode_picker.addButton(self.sure_set)
+        mode_picker.addButton(self.user_def, 0)
+        mode_picker.addButton(self.random_set, 1)
+        mode_picker.addButton(self.sure_set, 2)
 
         time_picker = QButtonGroup(self)
-        time_picker.addButton(self.std_time)
-        time_picker.addButton(self.var_time)
-        time_picker.addButton(self.relaxed_time)
+        time_picker.addButton(self.std_time, 0)
+        time_picker.addButton(self.var_time, 1)
+        time_picker.addButton(self.relaxed_time, 2)
         return mode_picker, time_picker
 
 

@@ -17,7 +17,7 @@ class MainWindow(QMainWindow):
         self.main_menu = MainMenu()
         self.Stack.addWidget(self.main_menu)
         self.Stack.setCurrentIndex(1)
-
+        self.main_menu.next_page.clicked.connect(lambda: self.Stack.setCurrentIndex(0))
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
