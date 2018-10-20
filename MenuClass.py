@@ -38,13 +38,10 @@ class MainMenu(QWidget):
         self.setLayout(layout)
 
     def mode_logic(self):
-
-        selected_time = 0
         if self.groups[1].checkedId() == 0: selected_time = 30
         elif self.groups[1].checkedId() == 1: selected_time = self.var_time_edit.value()
         else: selected_time = 1000
         self.selected_modes = [self.groups[0].checkedId(), selected_time]
-        print(self.selected_modes)
 
     def def_layout(self):
         left_col = QVBoxLayout()

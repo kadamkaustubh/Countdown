@@ -18,6 +18,7 @@ class MainWindow(QMainWindow):
         self.Stack.addWidget(self.main_menu)
         self.Stack.setCurrentIndex(1)
         self.main_menu.next_page.clicked.connect(lambda: self.Stack.setCurrentIndex(0))
+        self.main_menu.next_page.clicked.connect(lambda: print(self.main_menu.selected_modes))
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
