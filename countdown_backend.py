@@ -6,6 +6,7 @@ class CountDownSolver:
         self.big_numbers = big_numbers
         self.numbers = self.number_generator() if numbers is None else numbers
         self.target = random.randint(100, 1000) if target is None else target
+        self.solution_stack = []
 
         add = lambda a, b: a + b
         sub = lambda a, b: a - b
@@ -73,4 +74,4 @@ class CountDownSolver:
             return stack
 
         recurse([], numbers)
-        return print_stack
+        self.solution_stack = print_stack

@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="21350412-9c6b-4e7b-a080-502a9c6ade1a" name="Default Changelist" comment="" />
+    <list default="true" id="21350412-9c6b-4e7b-a080-502a9c6ade1a" name="Default Changelist" comment="updates to WordGame and connecting pages">
+      <change afterPath="$PROJECT_DIR$/Multithreading test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/countdown_backend.py" beforeDir="false" afterPath="$PROJECT_DIR$/countdown_backend.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/problemClass.py" beforeDir="false" afterPath="$PROJECT_DIR$/problemClass.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,43 +17,51 @@
     <session id="885568194">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="8" />
+          <entry key="project.closed" value="14" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.4" value="3" />
-          <entry key="project.open.time.6" value="2" />
-          <entry key="project.open.time.7" value="1" />
+          <entry key="project.open.time.4" value="6" />
+          <entry key="project.open.time.6" value="4" />
+          <entry key="project.open.time.7" value="3" />
           <entry key="project.open.time.8" value="2" />
-          <entry key="project.opened" value="9" />
+          <entry key="project.opened" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="SortedWords" value="3" />
+          <entry key="en" value="7" />
+          <entry key="en-basic" value="1" />
           <entry key="md" value="1" />
           <entry key="png" value="1" />
-          <entry key="py" value="8" />
+          <entry key="py" value="15" />
+          <entry key="txt" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Image" value="1" />
           <entry key="Markdown" value="1" />
-          <entry key="Python" value="8" />
+          <entry key="PLAIN_TEXT" value="16" />
+          <entry key="Python" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Python Console" value="268" />
-          <entry key="dummy" value="1" />
+          <entry key="Python Console" value="1331" />
+          <entry key="dummy" value="20" />
+          <entry key="en" value="8" />
           <entry key="md" value="959" />
-          <entry key="py" value="5581" />
-          <entry key="txt" value="214" />
+          <entry key="py" value="15700" />
+          <entry key="regexp" value="1" />
+          <entry key="txt" value="350" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="959" />
-          <entry key="PLAIN_TEXT" value="215" />
-          <entry key="Python" value="5849" />
+          <entry key="PLAIN_TEXT" value="378" />
+          <entry key="Python" value="17031" />
+          <entry key="RegExp" value="1" />
         </counts>
       </usages-collector>
     </session>
@@ -56,24 +69,59 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Main CountDown App.py">
+        <entry file="file://$PROJECT_DIR$/test app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1394">
-              <caret line="89" selection-start-line="89" selection-end-line="89" />
+            <state>
               <folding>
-                <marker date="1539525125142" expanded="true" signature="5791:6075" ph="..." />
+                <marker date="1540008268965" expanded="true" signature="184:189" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/problemClass.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="58" column="66" selection-start-line="58" selection-start-column="66" selection-end-line="58" selection-end-column="66" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+                <marker date="1540092415758" expanded="true" signature="376:6052" ph="..." />
+                <marker date="1540092415758" expanded="true" signature="501:510" ph="..." />
+                <marker date="1540092415758" expanded="true" signature="1912:2281" ph="..." />
+                <marker date="1540092415758" expanded="true" signature="2548:2554" ph="..." />
+                <marker date="1540092415758" expanded="true" signature="2585:3032" ph="..." />
+                <marker date="1540092415758" expanded="true" signature="3065:3435" ph="..." />
+                <marker date="1540092415758" expanded="true" signature="3490:3779" ph="..." />
+                <marker date="1540092415758" expanded="true" signature="3818:4400" ph="..." />
+                <marker date="1540092415758" expanded="true" signature="4430:5672" ph="..." />
+                <marker date="1540092415758" expanded="true" signature="6049:6052" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test app.py">
+        <entry file="file://$PROJECT_DIR$/Multithreading test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="142">
+              <caret line="61" column="4" lean-forward="true" selection-start-line="61" selection-start-column="4" selection-end-line="61" selection-end-column="47" />
               <folding>
-                <marker date="1539570963232" expanded="true" signature="184:189" ph="..." />
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/countdown_backend.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="193">
+              <caret line="79" selection-start-line="79" selection-end-line="79" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+                <marker date="1540090976498" expanded="true" signature="620:626" ph="..." />
+                <marker date="1540090976498" expanded="true" signature="856:861" ph="..." />
               </folding>
             </state>
           </provider>
@@ -82,36 +130,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MenuClass.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
-              <caret line="54" column="43" selection-start-line="54" selection-start-column="43" selection-end-line="54" selection-end-column="43" />
+            <state relative-caret-position="51">
+              <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="24" />
               <folding>
-                <marker date="1539549735821" expanded="true" signature="237:242" ph="..." />
-                <marker date="1539549735821" expanded="true" signature="1036:2071" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/countdown_backend.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
-              <folding>
-                <marker date="1539571380830" expanded="true" signature="651:763" ph="..." />
+                <marker date="1539983493262" expanded="true" signature="237:242" ph="..." />
+                <marker date="1539983493262" expanded="true" signature="1140:1141" ph="..." />
+                <marker date="1539983493262" expanded="true" signature="1140:1145" ph="..." />
+                <marker date="1539983493262" expanded="true" signature="1140:1407" ph="..." />
+                <marker date="1539983493262" expanded="true" signature="1428:2463" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/countdown.py">
+        <entry file="file://$PROJECT_DIR$/Main CountDown App.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1275">
-              <caret line="77" column="25" selection-start-line="77" selection-start-column="25" selection-end-line="77" selection-end-column="25" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
+            <state>
+              <caret line="160" column="16" selection-start-line="160" selection-start-column="16" selection-end-line="160" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -132,6 +168,11 @@
       <find>count</find>
       <find>spinb</find>
       <find>time_input</find>
+      <find>offside</find>
+      <find>jass</find>
+      <find>tornadoes</find>
+      <find>bashful</find>
+      <find>thread</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -149,13 +190,18 @@
         <option value="$PROJECT_DIR$/countdown.py" />
         <option value="$PROJECT_DIR$/Main CountDown App.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/words/en" />
+        <option value="$PROJECT_DIR$/WordGame.py" />
         <option value="$PROJECT_DIR$/MenuClass.py" />
         <option value="$PROJECT_DIR$/test app.py" />
+        <option value="$PROJECT_DIR$/problemPage.py" />
+        <option value="$PROJECT_DIR$/Multithreading test.py" />
         <option value="$PROJECT_DIR$/countdown_backend.py" />
+        <option value="$PROJECT_DIR$/problemClass.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="15" />
     <option name="y" value="30" />
     <option name="width" value="1890" />
@@ -166,6 +212,22 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Countdown" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Countdown" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Countdown" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Countdown" type="462c0819:PsiDirectoryNode" />
+              <item name="words" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -177,20 +239,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Countdown" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Countdown" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="last.edited.regexp" value="mlarsas" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -213,28 +265,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test app">
-    <configuration name="Main CountDown App" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Countdown" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main CountDown App.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.problemClass">
     <configuration name="MenuClass" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Countdown" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -256,7 +287,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="countdown" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Multithreading test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Countdown" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -268,7 +299,28 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/countdown.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Multithreading test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="WordGame" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Countdown" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/WordGame.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -298,7 +350,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test app" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="problemClass" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Countdown" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -310,7 +362,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test app.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/problemClass.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -320,19 +372,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.Main CountDown App" />
       <item itemvalue="Python.countdown_backend" />
-      <item itemvalue="Python.countdown" />
-      <item itemvalue="Python.test app" />
       <item itemvalue="Python.MenuClass" />
+      <item itemvalue="Python.WordGame" />
+      <item itemvalue="Python.problemClass" />
+      <item itemvalue="Python.Multithreading test" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test app" />
-        <item itemvalue="Python.MenuClass" />
-        <item itemvalue="Python.Main CountDown App" />
+        <item itemvalue="Python.problemClass" />
+        <item itemvalue="Python.Multithreading test" />
         <item itemvalue="Python.countdown_backend" />
-        <item itemvalue="Python.countdown" />
+        <item itemvalue="Python.WordGame" />
+        <item itemvalue="Python.MenuClass" />
       </list>
     </recent_temporary>
   </component>
@@ -403,7 +455,56 @@
       <option name="project" value="LOCAL" />
       <updated>1539571382236</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Started word finder">
+      <created>1539665562642</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1539665562642</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Started word finder">
+      <created>1539740600661</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1539740600661</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Started word finder">
+      <created>1539740630899</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1539740630899</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Add dictionary">
+      <created>1539834087924</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1539834087924</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Started word finder">
+      <created>1539834101061</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1539834101061</updated>
+    </task>
+    <task id="LOCAL-00014" summary="updates to WordGame and connecting pages">
+      <created>1539920363127</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1539920363127</updated>
+    </task>
+    <task id="LOCAL-00015" summary="problem class started">
+      <created>1540008276151</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1540008276151</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TodoView">
@@ -417,13 +518,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1709062" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49822065" visible="true" weight="0.1709062" />
+      <window_info id="Structure" order="1" sideWeight="0.5017794" side_tool="true" weight="0.1709062" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3291815" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3291815" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3291815" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -443,13 +545,18 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="End of day commit" />
     <MESSAGE value="Countdown Solver Class Added" />
     <MESSAGE value="solver Implemented. Progress bar added as a proxy for timer" />
     <MESSAGE value="Deleted unrelated and obsolete files" />
     <MESSAGE value="Readme update" />
     <MESSAGE value="end of day commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="end of day commit" />
+    <MESSAGE value="Add dictionary" />
+    <MESSAGE value="Started word finder" />
+    <MESSAGE value="updates to WordGame and connecting pages" />
+    <MESSAGE value="problem class started" />
+    <option name="LAST_COMMIT_MESSAGE" value="problem class started" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
@@ -467,56 +574,127 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main CountDown App.py">
+    <entry file="file://$PROJECT_DIR$/countdown.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1394">
-          <caret line="89" selection-start-line="89" selection-end-line="89" />
-          <folding>
-            <marker date="1539525125142" expanded="true" signature="5791:6075" ph="..." />
-          </folding>
+        <state relative-caret-position="1309">
+          <caret line="77" column="25" selection-start-line="77" selection-start-column="25" selection-end-line="77" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/countdown.py">
+    <entry file="file://$PROJECT_DIR$/words/en-basic">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="77" column="25" selection-start-line="77" selection-start-column="25" selection-end-line="77" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-14200" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dictionary.txt" />
+    <entry file="file://$PROJECT_DIR$/words/en">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="204744" column="9" selection-start-line="204744" selection-end-line="204744" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sortedDic.txt" />
+    <entry file="file://$PROJECT_DIR$/words/SortedWords">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-16218">
+          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        <state>
           <folding>
-            <marker date="1539570963232" expanded="true" signature="184:189" ph="..." />
+            <marker date="1540008268965" expanded="true" signature="184:189" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MenuClass.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="54" column="43" selection-start-line="54" selection-start-column="43" selection-end-line="54" selection-end-column="43" />
+        <state relative-caret-position="51">
+          <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="24" />
           <folding>
-            <marker date="1539549735821" expanded="true" signature="237:242" ph="..." />
-            <marker date="1539549735821" expanded="true" signature="1036:2071" ph="..." />
+            <marker date="1539983493262" expanded="true" signature="237:242" ph="..." />
+            <marker date="1539983493262" expanded="true" signature="1140:1141" ph="..." />
+            <marker date="1539983493262" expanded="true" signature="1140:1145" ph="..." />
+            <marker date="1539983493262" expanded="true" signature="1140:1407" ph="..." />
+            <marker date="1539983493262" expanded="true" signature="1428:2463" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WordGame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="924">
+          <caret line="55" column="24" lean-forward="true" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main CountDown App.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="160" column="16" selection-start-line="160" selection-start-column="16" selection-end-line="160" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/countdown_backend.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="193">
+          <caret line="79" selection-start-line="79" selection-end-line="79" />
           <folding>
-            <marker date="1539571380830" expanded="true" signature="651:763" ph="..." />
+            <element signature="e#0#13#0" expanded="true" />
+            <marker date="1540090976498" expanded="true" signature="620:626" ph="..." />
+            <marker date="1540090976498" expanded="true" signature="856:861" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Multithreading test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="61" column="4" lean-forward="true" selection-start-line="61" selection-start-column="4" selection-end-line="61" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/problemClass.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="58" column="66" selection-start-line="58" selection-start-column="66" selection-end-line="58" selection-end-column="66" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+            <marker date="1540092415758" expanded="true" signature="376:6052" ph="..." />
+            <marker date="1540092415758" expanded="true" signature="501:510" ph="..." />
+            <marker date="1540092415758" expanded="true" signature="1912:2281" ph="..." />
+            <marker date="1540092415758" expanded="true" signature="2548:2554" ph="..." />
+            <marker date="1540092415758" expanded="true" signature="2585:3032" ph="..." />
+            <marker date="1540092415758" expanded="true" signature="3065:3435" ph="..." />
+            <marker date="1540092415758" expanded="true" signature="3490:3779" ph="..." />
+            <marker date="1540092415758" expanded="true" signature="3818:4400" ph="..." />
+            <marker date="1540092415758" expanded="true" signature="4430:5672" ph="..." />
+            <marker date="1540092415758" expanded="true" signature="6049:6052" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
