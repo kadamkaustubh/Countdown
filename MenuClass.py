@@ -15,7 +15,6 @@ class MainMenu(QWidget):
         self.selected_modes = []
         self.user_def = QRadioButton('User Defined')
         self.random_set = QRadioButton('Random')
-        self.sure_set = QRadioButton('Random with Sure Answer')
 
 
         # time modes
@@ -47,7 +46,6 @@ class MainMenu(QWidget):
         left_col = QVBoxLayout()
         left_col.addWidget(self.user_def)
         left_col.addWidget(self.random_set)
-        left_col.addWidget(self.sure_set)
 
         var_time_row = QHBoxLayout()
         var_time_row.addWidget(self.var_time)
@@ -80,7 +78,6 @@ class MainMenu(QWidget):
         mode_picker = QButtonGroup(self)
         mode_picker.addButton(self.user_def, 0)
         mode_picker.addButton(self.random_set, 1)
-        mode_picker.addButton(self.sure_set, 2)
 
         time_picker = QButtonGroup(self)
         time_picker.addButton(self.std_time, 0)

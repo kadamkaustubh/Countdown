@@ -44,6 +44,7 @@ class ProblemPage(QWidget):
             self.set_numbers.clicked.connect(lambda: self.set_numbers_action())
             self.reset_button.clicked.connect(lambda: self.reset_actions())
             self.set_target.clicked.connect(lambda: self.target_button_action())
+            self.back_button.clicked.connect(lambda: self.reset_actions())
 
     def solve(self):
         solver = CountDownSolver(self.big_number_count.value(), self.numbers, self.target)
